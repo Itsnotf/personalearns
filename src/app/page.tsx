@@ -1,5 +1,6 @@
 import ButtonBlue from "@/components/ButtonBlue";
 import ButtonWhite from "@/components/ButtonWhite";
+import Link from "next/link";
 export default function Home() {
   return (
     <div className="mx-[20px] md:mx-[80px] lg:mx-[100px]">
@@ -10,12 +11,17 @@ export default function Home() {
               Temukan Cara Belajar Yang Tepat Untuk Anda
             </h1>
             <p className="text-lg mx-auto max-w-[500px]">
-              Optimalisasi proses belajar Anda dengan pendekatan yang terstruktur dan ilmiah
+              Optimalisasi proses belajar Anda dengan pendekatan yang
+              terstruktur dan ilmiah
             </p>
           </div>
           <div className="flex justify-center gap-5">
-            <ButtonBlue title="Temukan sekarang" />
-            <ButtonWhite title="Tentang Kami" />
+            <Link href="rekomendasi">
+              <ButtonBlue title="Temukan sekarang" />
+            </Link>
+            <Link href="tentangKami">
+              <ButtonWhite title="Tentang Kami" />
+            </Link>
           </div>
         </div>
       </section>
