@@ -1,15 +1,15 @@
-import { error } from "console";
 import React from "react";
 
-interface input {
+interface InputProps {
   name: string;
   value: string;
   title: string;
   type: string;
-  onChange: any;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void; // Tipe spesifik
   placeholder: string;
-  error: any;
+  error?: string; // Opsional, tipe string
 }
+
 export default function Input({
   title,
   type,
@@ -18,10 +18,11 @@ export default function Input({
   onChange,
   placeholder,
   error,
-}: input) {
+}: InputProps) {
   return (
     <div className="flex flex-col">
-      <div><p className="text-xs text-red-500">{error}</p></div>
+      {/* Tampilkan error jika ada */}
+      {error && <p className="text-xs text-red-500">{error}</p>}
       <label htmlFor={name} className="text-base text-hitam">
         {title}
       </label>

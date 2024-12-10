@@ -1,7 +1,22 @@
 import { db } from "../config/firebase";
 import { addDoc, collection } from "firebase/firestore";
 
-const addPost = async (formData : any) => {
+// Define an interface for formData
+interface FormData {
+  nama: string;
+  email: string;
+  GayaBelajar: string;
+  Suasana: string;
+  Durasi: string;
+  Interval: string;
+  Tujuan: string;
+  Kesulitan: string;
+  Pemahaman: string;
+  MetodeBelajar: string;
+}
+
+// Update addPost function to use FormData type
+const addPost = async (formData: FormData) => {
   try {
     // Referensi koleksi Firestore
     const collectionRef = collection(db, "posts");

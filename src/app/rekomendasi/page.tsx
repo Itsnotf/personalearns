@@ -102,7 +102,7 @@ export default function Rekomendasi() {
       pemahaman: "",
     };
 
-    for (let field in formData) {
+    for (const field in formData) {
       if (!formData[field as keyof typeof formData]) {
         newErrors[field as keyof typeof formData] = `${field} is required`;
       } else {

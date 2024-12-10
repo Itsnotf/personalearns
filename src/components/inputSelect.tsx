@@ -7,8 +7,8 @@ interface SelectProps {
   value: string;
   title: string;
   options: { label: string; value: string }[];
-  onChange: any;
-  error : any
+  onChange: React.ChangeEventHandler<HTMLSelectElement>; // Tipe untuk onChange
+  error?: string; // Tipe untuk error
 }
 
 export default function Select({
@@ -19,11 +19,11 @@ export default function Select({
   onChange,
   error,
 }: SelectProps) {
-  
-
   return (
     <div className="flex flex-col">
-      <div><p className="text-xs text-red-500">{error}</p></div>
+      <div>
+        <p className="text-xs text-red-500">{error}</p>
+      </div>
       <label htmlFor={name} className="text-base text-hitam mb-1">
         {title}
       </label>
